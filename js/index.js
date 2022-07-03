@@ -16,7 +16,7 @@ function ticksIncreament(){
     
     ticks ++;
     likes = 0
-    if (ticks === 59){
+    if (ticks === 60){
         mins++;
         ticks = 0;
         tickslabel.textContent = `${ticks} Seconds`
