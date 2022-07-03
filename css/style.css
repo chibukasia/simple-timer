@@ -10,3 +10,8 @@ body{
     padding-right: 20px;
     margin-right: 10px;
 }
+main{
+    margin: 0px auto;
+    overflow: auto;
+    text-align: center;
+}
