@@ -7,10 +7,12 @@ let subBtn = document.getElementById('btn-subtract');
 let startBtn = document.getElementById('start-btn');
 let likeBtn = document.getElementById('like-btn');
 let comments = document.querySelector('.comments');
+let resetBtn = document.getElementById('reset-btn');
+let tickslabel = document.getElementById('ticks');
+    let minsLabel = document.getElementById('mins');
 
 function ticksIncreament(){
-    let tickslabel = document.getElementById('ticks');
-    let minsLabel = document.getElementById('mins');
+    
     ticks ++;
     likes = 0
     if (ticks === 59){
@@ -71,9 +73,19 @@ function addComment(e){
     comments.appendChild(para)
     return para;
 }
+
+function resetTimer(){
+    ticks = 0;
+    mins = 0
+
+    tickslabel.textContent = `${ticks} Seconds`;
+    minsLabel.textContent = `${mins} Minutes`;
+    clearInterval(interval)
+}
 addBtn.addEventListener('click', addTicks);
 subBtn.addEventListener('click', subtractTicks)
 startBtn.addEventListener('click', pauseAndPlayTicks)
 likeBtn.addEventListener('click', likesCount)
 document.querySelector('.form').addEventListener('submit', addComment)
+resetBtn.addEventListener('click', resetTimer)
 
